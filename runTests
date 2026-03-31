@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+test_group() {
+	local test_name="$1"
+	shift
+
+	# echo "Running $test_name"
+	cat "$@" > temp/combined_${test_name}
+	./pzip "$@"  > temp/compressed_${test_name}
+	./unzip < temp/compressed_${test_name} > temp/uncompressed_${test_name}
+	diff temp/uncompressed_${test_name} temp/combined_${test_name}
+	return $?
+}
+
+# Make sure uncompress works
+./unzip < staticTestData/expected_compressed1.txt > temp/uncompressed1.txt || exit 1
+diff temp/uncompressed1.txt staticTestData/orig_uncompressed1.txt || exit 1 
+
+# Make sure compress works
+./pzip staticTestData/orig_uncompressed1.txt > temp/compressed1.txt || exit 1
+diff temp/compressed1.txt staticTestData/expected_compressed1.txt || exit 1
+
+# Test different files of single sizes
+for i in testData/testData*a.txt
+do
+	b=$(basename "$i")
+	test_group "single_$b" "$i" || exit 1
+done
+
+# Test many files of the same size
+test_group "all10" testData/testData10?.txt || exit 1
+test_group "all365" testData/testData10?.txt || exit 1
+test_group "all1M" testData/testData1M?.txt || exit 1
+test_group "all10M" testData/testData10M?.txt || exit 1
+
+# Combine big and small files
+test_group small_first testData/testData10?.txt testData/testData1M?.txt || exit 1
+test_group big_first testData/testData1M?.txt testData/testData10?.txt || exit 1
+
+files=(testData/testData1M?.txt testData/testData10?.txt)
+shuffled=($(printf '%s\n' "${files[@]}" | shuf))
+test_group shuffled "${shuffled[@]}" || exit 1 
+
+# Use a couple files of each size:
+test_group each_size1 testData/testData*[a-c].txt || exit 1
+
+# Shuffle all files
+files=(testData/testData*.txt)
+shuffled=($(printf '%s\n' "${files[@]}" | shuf))
+test_group all_shuffled "${shuffled[@]}" || exit 1
+
+echo 'SUCCESS!'

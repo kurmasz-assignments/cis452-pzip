@@ -1,0 +1,17 @@
+a.out
+*.a
+*.o
+*.so
+*.dylib
+*.gch
+*.dSYM
+core
+core.*
+*~
+.DS_Store
+.vscode/
+.idea/
+build/
+pzip
+wzip
+wunzip

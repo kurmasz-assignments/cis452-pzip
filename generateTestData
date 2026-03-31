@@ -1,0 +1,184 @@
+
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DATA_DIR="testData"
+
+if [[ ! -f "$SCRIPT_DIR/filegen.py" ]]; then
+    echo "Error: filegen.py not found in $SCRIPT_DIR" >&2
+    exit 1
+fi
+
+if [[ ! -d "$SCRIPT_DIR/${DATA_DIR}" ]]; then
+    echo "Error: ${DATA_DIR} directory not found in $SCRIPT_DIR" >&2
+    exit 1
+fi
+
+#
+# 10 runs (approx 120 bytes)
+#
+./filegen.py --seed 62950 10 > ${DATA_DIR}/testData10a.txt
+./filegen.py --seed 59906 10 > ${DATA_DIR}/testData10b.txt
+./filegen.py --seed 36224 10 > ${DATA_DIR}/testData10c.txt
+./filegen.py --seed 88569 10 > ${DATA_DIR}/testData10d.txt
+./filegen.py --seed 33435 10 > ${DATA_DIR}/testData10e.txt
+./filegen.py --seed 40180 10 > ${DATA_DIR}/testData10f.txt
+./filegen.py --seed 42562 10 > ${DATA_DIR}/testData10g.txt
+./filegen.py --seed 27464 10 > ${DATA_DIR}/testData10h.txt
+./filegen.py --seed 21348 10 > ${DATA_DIR}/testData10i.txt
+./filegen.py --seed 42918 10 > ${DATA_DIR}/testData10j.txt
+./filegen.py --seed 60209 10 > ${DATA_DIR}/testData10k.txt
+./filegen.py --seed 79574 10 > ${DATA_DIR}/testData10l.txt
+./filegen.py --seed 99693 10 > ${DATA_DIR}/testData10m.txt
+./filegen.py --seed 80599 10 > ${DATA_DIR}/testData10n.txt
+./filegen.py --seed 21775 10 > ${DATA_DIR}/testData10o.txt
+./filegen.py --seed 91778 10 > ${DATA_DIR}/testData10p.txt
+./filegen.py --seed 74130 10 > ${DATA_DIR}/testData10q.txt
+./filegen.py --seed 36144 10 > ${DATA_DIR}/testData10r.txt
+./filegen.py --seed 65265 10 > ${DATA_DIR}/testData10s.txt
+./filegen.py --seed 90375 10 > ${DATA_DIR}/testData10t.txt
+./filegen.py --seed 87123 10 > ${DATA_DIR}/testData10u.txt
+./filegen.py --seed 38402 10 > ${DATA_DIR}/testData10v.txt
+./filegen.py --seed 59018 10 > ${DATA_DIR}/testData10w.txt
+./filegen.py --seed 60870 10 > ${DATA_DIR}/testData10x.txt
+./filegen.py --seed 99439 10 > ${DATA_DIR}/testData10y.txt
+./filegen.py --seed 37864 10 > ${DATA_DIR}/testData10z.txt
+
+
+#
+# 1 Million
+#
+./filegen.py --seed 93810 1000000 > ${DATA_DIR}/testData1Ma.txt
+./filegen.py --seed 24592 1000000 > ${DATA_DIR}/testData1Mb.txt
+./filegen.py --seed 13278 1000000 > ${DATA_DIR}/testData1Mc.txt
+./filegen.py --seed 46048 1000000 > ${DATA_DIR}/testData1Md.txt
+./filegen.py --seed 42098 1000000 > ${DATA_DIR}/testData1Me.txt
+./filegen.py --seed 39256 1000000 > ${DATA_DIR}/testData1Mf.txt
+./filegen.py --seed 28289 1000000 > ${DATA_DIR}/testData1Mg.txt
+./filegen.py --seed 23434 1000000 > ${DATA_DIR}/testData1Mh.txt
+./filegen.py --seed 98696 1000000 > ${DATA_DIR}/testData1Mi.txt
+./filegen.py --seed 81482 1000000 > ${DATA_DIR}/testData1Mj.txt
+./filegen.py --seed 21395 1000000 > ${DATA_DIR}/testData1Mk.txt
+./filegen.py --seed 87397 1000000 > ${DATA_DIR}/testData1Ml.txt
+./filegen.py --seed 65302 1000000 > ${DATA_DIR}/testData1Mm.txt
+./filegen.py --seed 14165 1000000 > ${DATA_DIR}/testData1Mn.txt
+./filegen.py --seed 13905 1000000 > ${DATA_DIR}/testData1Mo.txt
+./filegen.py --seed 22280 1000000 > ${DATA_DIR}/testData1Mp.txt
+./filegen.py --seed 38657 1000000 > ${DATA_DIR}/testData1Mq.txt
+./filegen.py --seed 40495 1000000 > ${DATA_DIR}/testData1Mr.txt
+./filegen.py --seed 76237 1000000 > ${DATA_DIR}/testData1Ms.txt
+./filegen.py --seed 88907 1000000 > ${DATA_DIR}/testData1Mt.txt
+./filegen.py --seed 13478 1000000 > ${DATA_DIR}/testData1Mu.txt
+./filegen.py --seed 83563 1000000 > ${DATA_DIR}/testData1Mv.txt
+./filegen.py --seed 36062 1000000 > ${DATA_DIR}/testData1Mw.txt
+./filegen.py --seed 95181 1000000 > ${DATA_DIR}/testData1Mx.txt
+./filegen.py --seed 81426 1000000 > ${DATA_DIR}/testData1My.txt
+./filegen.py --seed 64987 1000000 > ${DATA_DIR}/testData1Mz.txt
+
+#
+# < 1KB
+#
+./filegen.py --seed 62099 90 > ${DATA_DIR}/testData90a.txt
+./filegen.py --seed 34839 90 > ${DATA_DIR}/testData90b.txt
+./filegen.py --seed 53621 90 > ${DATA_DIR}/testData90c.txt
+./filegen.py --seed 34245 90 > ${DATA_DIR}/testData90d.txt
+./filegen.py --seed 91990 90 > ${DATA_DIR}/testData90e.txt
+./filegen.py --seed 11888 90 > ${DATA_DIR}/testData90f.txt
+./filegen.py --seed 79031 90 > ${DATA_DIR}/testData90g.txt
+./filegen.py --seed 11024 90 > ${DATA_DIR}/testData90h.txt
+./filegen.py --seed 54745 90 > ${DATA_DIR}/testData90i.txt
+./filegen.py --seed 99919 90 > ${DATA_DIR}/testData90j.txt
+./filegen.py --seed 70814 90 > ${DATA_DIR}/testData90k.txt
+./filegen.py --seed 27761 90 > ${DATA_DIR}/testData90l.txt
+./filegen.py --seed 39373 90 > ${DATA_DIR}/testData90m.txt
+./filegen.py --seed 26039 90 > ${DATA_DIR}/testData90n.txt
+./filegen.py --seed 28430 90 > ${DATA_DIR}/testData90o.txt
+./filegen.py --seed 88867 90 > ${DATA_DIR}/testData90p.txt
+./filegen.py --seed 32717 90 > ${DATA_DIR}/testData90q.txt
+./filegen.py --seed 67905 90 > ${DATA_DIR}/testData90r.txt
+./filegen.py --seed 63765 90 > ${DATA_DIR}/testData90s.txt
+./filegen.py --seed 52425 90 > ${DATA_DIR}/testData90t.txt
+./filegen.py --seed 97795 90 > ${DATA_DIR}/testData90u.txt
+./filegen.py --seed 67133 90 > ${DATA_DIR}/testData90v.txt
+./filegen.py --seed 28283 90 > ${DATA_DIR}/testData90w.txt
+./filegen.py --seed 50042 90 > ${DATA_DIR}/testData90x.txt
+./filegen.py --seed 31474 90 > ${DATA_DIR}/testData90y.txt
+./filegen.py --seed 25711 90 > ${DATA_DIR}/testData90z.txt
+
+
+#
+# < 4KB (i.e., approx one page)
+#
+./filegen.py --seed 43125 365 > ${DATA_DIR}/testData365a.txt
+./filegen.py --seed 52717 365 > ${DATA_DIR}/testData365b.txt
+./filegen.py --seed 35862 365 > ${DATA_DIR}/testData365c.txt
+./filegen.py --seed 41521 365 > ${DATA_DIR}/testData365d.txt
+./filegen.py --seed 35313 365 > ${DATA_DIR}/testData365e.txt
+./filegen.py --seed 25081 365 > ${DATA_DIR}/testData365f.txt
+./filegen.py --seed 48315 365 > ${DATA_DIR}/testData365g.txt
+./filegen.py --seed 72421 365 > ${DATA_DIR}/testData365h.txt
+./filegen.py --seed 83124 365 > ${DATA_DIR}/testData365i.txt
+./filegen.py --seed 90128 365 > ${DATA_DIR}/testData365j.txt
+./filegen.py --seed 41170 365 > ${DATA_DIR}/testData365k.txt
+./filegen.py --seed 29067 365 > ${DATA_DIR}/testData365l.txt
+./filegen.py --seed 82861 365 > ${DATA_DIR}/testData365m.txt
+./filegen.py --seed 92660 365 > ${DATA_DIR}/testData365n.txt
+./filegen.py --seed 96654 365 > ${DATA_DIR}/testData365o.txt
+./filegen.py --seed 75617 365 > ${DATA_DIR}/testData365p.txt
+./filegen.py --seed 10318 365 > ${DATA_DIR}/testData365q.txt
+./filegen.py --seed 46692 365 > ${DATA_DIR}/testData365r.txt
+./filegen.py --seed 13716 365 > ${DATA_DIR}/testData365s.txt
+./filegen.py --seed 75162 365 > ${DATA_DIR}/testData365t.txt
+./filegen.py --seed 32633 365 > ${DATA_DIR}/testData365u.txt
+./filegen.py --seed 35064 365 > ${DATA_DIR}/testData365v.txt
+./filegen.py --seed 76494 365 > ${DATA_DIR}/testData365w.txt
+./filegen.py --seed 60928 365 > ${DATA_DIR}/testData365x.txt
+./filegen.py --seed 33969 365 > ${DATA_DIR}/testData365y.txt
+./filegen.py --seed 53448 365 > ${DATA_DIR}/testData365z.txt
+
+#
+# 1 Million
+#
+./filegen.py --seed 19281 1000000 > ${DATA_DIR}/${DATA_DIR}1Ma.txt
+./filegen.py --seed 50892 1000000 > ${DATA_DIR}/${DATA_DIR}1Mb.txt
+./filegen.py --seed 66962 1000000 > ${DATA_DIR}/${DATA_DIR}1Mc.txt
+./filegen.py --seed 42276 1000000 > ${DATA_DIR}/${DATA_DIR}1Md.txt
+./filegen.py --seed 68416 1000000 > ${DATA_DIR}/${DATA_DIR}1Me.txt
+./filegen.py --seed 48540 1000000 > ${DATA_DIR}/${DATA_DIR}1Mf.txt
+./filegen.py --seed 43565 1000000 > ${DATA_DIR}/${DATA_DIR}1Mg.txt
+./filegen.py --seed 83457 1000000 > ${DATA_DIR}/${DATA_DIR}1Mh.txt
+./filegen.py --seed 22476 1000000 > ${DATA_DIR}/${DATA_DIR}1Mi.txt
+./filegen.py --seed 74869 1000000 > ${DATA_DIR}/${DATA_DIR}1Mj.txt
+./filegen.py --seed 34147 1000000 > ${DATA_DIR}/${DATA_DIR}1Mk.txt
+./filegen.py --seed 71412 1000000 > ${DATA_DIR}/${DATA_DIR}1Ml.txt
+./filegen.py --seed 78494 1000000 > ${DATA_DIR}/${DATA_DIR}1Mm.txt
+./filegen.py --seed 26771 1000000 > ${DATA_DIR}/${DATA_DIR}1Mn.txt
+./filegen.py --seed 19109 1000000 > ${DATA_DIR}/${DATA_DIR}1Mo.txt
+./filegen.py --seed 57629 1000000 > ${DATA_DIR}/${DATA_DIR}1Mp.txt
+./filegen.py --seed 31918 1000000 > ${DATA_DIR}/${DATA_DIR}1Mq.txt
+./filegen.py --seed 63398 1000000 > ${DATA_DIR}/${DATA_DIR}1Mr.txt
+./filegen.py --seed 70023 1000000 > ${DATA_DIR}/${DATA_DIR}1Ms.txt
+./filegen.py --seed 93718 1000000 > ${DATA_DIR}/${DATA_DIR}1Mt.txt
+./filegen.py --seed 76180 1000000 > ${DATA_DIR}/${DATA_DIR}1Mu.txt
+./filegen.py --seed 14062 1000000 > ${DATA_DIR}/${DATA_DIR}1Mv.txt
+./filegen.py --seed 79251 1000000 > ${DATA_DIR}/${DATA_DIR}1Mw.txt
+./filegen.py --seed 24719 1000000 > ${DATA_DIR}/${DATA_DIR}1Mx.txt
+./filegen.py --seed 60340 1000000 > ${DATA_DIR}/${DATA_DIR}1My.txt
+./filegen.py --seed 27784 1000000 > ${DATA_DIR}/${DATA_DIR}1Mz.txt
+
+#
+# 10 Million
+#
+./filegen.py --seed 12345 10000000 > ${DATA_DIR}/${DATA_DIR}10Ma.txt
+./filegen.py --seed 76455 10000000 > ${DATA_DIR}/${DATA_DIR}10Mb.txt
+./filegen.py --seed 94652 10000000 > ${DATA_DIR}/${DATA_DIR}10Mc.txt
+
+#
+# 1 Billion
+#
+if [[ "$*" == *"--gig"* ]]; then
+    #
+    # 1 Billion
+    #
+    ./filegen.py --seed 55545 1000000000 > ${DATA_DIR}/${DATA_DIR}1Ga.txt
+fi
