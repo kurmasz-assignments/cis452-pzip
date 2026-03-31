@@ -7,13 +7,13 @@ test_group() {
 	# echo "Running $test_name"
 	cat "$@" > temp/combined_${test_name}
 	./pzip "$@"  > temp/compressed_${test_name}
-	./unzip < temp/compressed_${test_name} > temp/uncompressed_${test_name}
+	./wunzip < temp/compressed_${test_name} > temp/uncompressed_${test_name}
 	diff temp/uncompressed_${test_name} temp/combined_${test_name}
 	return $?
 }
 
 # Make sure uncompress works
-./unzip < staticTestData/expected_compressed1.txt > temp/uncompressed1.txt || exit 1
+./wunzip < staticTestData/expected_compressed1.txt > temp/uncompressed1.txt || exit 1
 diff temp/uncompressed1.txt staticTestData/orig_uncompressed1.txt || exit 1 
 
 # Make sure compress works
