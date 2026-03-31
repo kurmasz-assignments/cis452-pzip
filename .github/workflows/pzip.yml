@@ -66,7 +66,7 @@ jobs:
           make
 
       - name: Create test data
-        run:  sh generateTestData
+        run:  bash generateTestData
 
       - name: Run instructor tests
-        run: sh runTests
+        run: bash runTests
