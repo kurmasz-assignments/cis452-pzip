@@ -125,6 +125,9 @@ to specify the configuration of the machine you are using (OS, number of cores, 
 
 Discuss the causes of any observed performance differences between the parallel versions.
 
+Before collecting your final data, don't forget to edit the `Makefile` to remove `-g` and 
+enable optimization.
+
 ## Testing
 
 * You can use `filegen.py` to generate random files (that intentionally include long runs).
