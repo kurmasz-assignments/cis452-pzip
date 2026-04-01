@@ -142,6 +142,8 @@ fi
 ./filegen.py --seed 76455 10000000 > ${DATA_DIR}/${DATA_DIR}10Mb.txt
 ./filegen.py --seed 94652 10000000 > ${DATA_DIR}/${DATA_DIR}10Mc.txt)&
 
+wait
+
 #
 # 1 Billion
 #
